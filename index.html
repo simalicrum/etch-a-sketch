@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<head>
+  <link type="text/css" rel="stylesheet" href="stylesheet.css" />
+</head>
+
+<body>
+  <div id="grid"></div>
+  <button id="boom">BOOM!</button>
+</body>
+
+<script>
+  var gridElementNumber = 16;
+  gridElement = document.createElement("div");
+  gridElement.setAttribute("class", "grid-element");
+  for (i = 0; i < gridElementNumber * gridElementNumber; i++) {
+    gridElementClone = gridElement.cloneNode(true);
+    grid.appendChild(gridElementClone);
+  }
+  grid.querySelectorAll(".grid-element").forEach((i) => {
+    i.addEventListener("mouseover", function () {
+      i.setAttribute("style", "background: black");
+    });
+  });
+  document.querySelector("#boom").addEventListener("click", function () {
+    gridElementNumber = prompt("Enter # of grid elements to draw");
+    document.getElementById("grid").style.gridTemplateRows = "repeat(" + gridElementNumber + ", 1fr)";
+    document.getElementById("grid").style.gridTemplateColumns = "repeat(" + gridElementNumber + ", 1fr)";
+    grid.innerHTML = "";
+    for (i = 0; i < gridElementNumber * gridElementNumber; i++) {
+    gridElementClone = gridElement.cloneNode(true);
+    grid.appendChild(gridElementClone);
+  }
+  grid.querySelectorAll(".grid-element").forEach((i) => {
+    i.addEventListener("mouseover", function () {
+      i.setAttribute("style", "background: black");
+    });
+  });
+  });
+</script>
